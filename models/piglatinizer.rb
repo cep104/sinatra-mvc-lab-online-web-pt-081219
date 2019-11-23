@@ -4,6 +4,7 @@ class PigLatinizer
         vowels.include?(word[0])
     end
 
+
     def piglatinize(string)
         words = string.split
         words.collect do |word|
@@ -19,4 +20,20 @@ class PigLatinizer
       end
 
   
+
+    def piglatinize(word)
+        
+        if self.is_vowel?(word)
+          
+            word.concat('way')
+        else
+            word.concat(word.slice!(/^[^aeiouAEIOU]*/i || "")) + 'ay'
+        end
+        
+        
+        
+    end
+
+    
+
 end
